@@ -1,0 +1,16 @@
+{
+  "name": "tdb-proxy-correct-wsdl",
+  "version": "1.0.0",
+  "description": "TDB Proxy matching official WSDL structure",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "xml2js": "^0.5.0"
+  }
+}
