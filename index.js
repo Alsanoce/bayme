@@ -129,6 +129,8 @@ app.post("/confirm", async (req, res) => {
 });
 
 
+onst PORT = process.env.PORT || 5051;
+
 app.listen(PORT, () => {
   console.log(`🚀 TDB Proxy server running on port ${PORT}`);
 });
