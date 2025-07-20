@@ -5,12 +5,17 @@ const axios = require("axios");
 const xml2js = require("xml2js");
 
 const app = express();
-const PORT = 5051;
+const PORT = process.env.PORT || 5051;
 const SOAP_URL = "http://62.240.55.2:6187/BCDUssd/newedfali.asmx";
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// ✅ راوت افتراضي
+app.get("/", (req, res) => {
+  res.send("🔧 API is working");
+});
 
 // ✅ /pay: إرسال طلب الدفع للمصرف
 app.post("/pay", async (req, res) => {
@@ -127,9 +132,6 @@ app.post("/confirm", async (req, res) => {
     res.status(500).json({ error: "فشل الاتصال بالسيرفر", message: error.message });
   }
 });
-
-
-onst PORT = process.env.PORT || 5051;
 
 app.listen(PORT, () => {
   console.log(`🚀 TDB Proxy server running on port ${PORT}`);
